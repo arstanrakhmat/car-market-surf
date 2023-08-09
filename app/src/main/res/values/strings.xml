@@ -4,4 +4,29 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="main_page">Главная</string>
     <string name="settings">Настройки</string>
+    <string name="car_name">Tesla Model X5</string>
+    <string name="car_type">Марка:</string>
+    <string name="type_your_card_number">Введите номер свой карты</string>
+    <string name="invention_year">Год выпуска:</string>
+    <string name="_2015">2015</string>
+    <string name="capacity">Объем:</string>
+    <string name="_5_5">5.5</string>
+    <string name="price">Цена:</string>
+    <string name="_23000">23000$</string>
+    <string name="data_sample">09.08.2023</string>
+    <string name="cancel">Отмена</string>
+    <string name="not_now">Не сейчас</string>
+    <string name="add_your_car">Добавить машину</string>
+    <string name="buy_subscription">Купить подписку</string>
+    <string name="add_photo">Добавить фото</string>
+    <string name="engine_capacity">Объем двигателя:</string>
+    <string name="hint_car_type">Марка вашей машины</string>
+    <string name="hint_car_price">Запрашиваемая цена в $</string>
+    <string name="hint_capacity">Объем двигателя</string>
+    <string name="hint_year_invation">Год выпуска</string>
+    <string name="bottomSheetTitle">Купите подписку,\n чтобы пользоваться приложением без ограничений\n\nВсего за 5$ в месяц</string>
+    <string name="sub_benefits1">Неограниченое количество просмотров объявлений</string>
+    <string name="sub_benefits2">Возможность размещение своих автомобилей в нашем приложении</string>
+    <string name="_0000_0000_0000_0000">0000 0000 0000 0000</string>
+
 </resources>
