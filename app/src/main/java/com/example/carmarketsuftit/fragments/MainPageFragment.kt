@@ -31,6 +31,8 @@ class MainPageFragment : BaseFragment<FragmentMainPageBinding>() {
         carViewModel.getAllData().observe(viewLifecycleOwner) {
             carAdapter.differ.submitList(it)
         }
+
+        setUpSearch()
     }
 
     private fun clickListeners() {
@@ -47,6 +49,38 @@ class MainPageFragment : BaseFragment<FragmentMainPageBinding>() {
             }
 
             findNavController().navigate(R.id.action_mainPageFragment_to_carDetailsFragment, bundle)
+        }
+    }
+
+    private fun setUpSearch() {
+        binding.searchView.apply {
+            isSubmitButtonEnabled = true
+            setOnQueryTextListener(object :
+                androidx.appcompat.widget.SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(p0: String?): Boolean {
+                    if (p0 != null) {
+                        searchCar(querySearch = p0)
+                    }
+                    return true
+                }
+
+                override fun onQueryTextChange(p0: String?): Boolean {
+                    if (p0 != null) {
+                        searchCar(p0)
+                    }
+                    return true
+                }
+            })
+        }
+    }
+
+    private fun searchCar(querySearch: String) {
+        val searchQuery = "%$querySearch%"
+
+        carViewModel.getSearchCar(searchQuery).observe(viewLifecycleOwner) {
+            it.let {
+                carAdapter.differ.submitList(it)
+            }
         }
     }
 
