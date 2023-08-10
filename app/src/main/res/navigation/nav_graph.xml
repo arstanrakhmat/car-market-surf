@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_mainPageFragment_to_addCarFragment"
             app:destination="@id/addCarFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_carDetailsFragment"
+            app:destination="@id/carDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -22,14 +25,14 @@
         android:id="@+id/addCarFragment"
         android:name="com.example.carmarketsuftit.fragments.AddCarFragment"
         android:label="fragment_add_car"
-        tools:layout="@layout/fragment_add_car" >
-        <action
-            android:id="@+id/action_addCarFragment_to_carDetailsFragment"
-            app:destination="@id/carDetailsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_add_car" />
     <fragment
         android:id="@+id/carDetailsFragment"
         android:name="com.example.carmarketsuftit.fragments.CarDetailsFragment"
         android:label="fragment_car_details"
-        tools:layout="@layout/fragment_car_details" />
+        tools:layout="@layout/fragment_car_details" >
+        <argument
+            android:name="car"
+            app:argType="com.example.carmarketsuftit.model.Car" />
+    </fragment>
 </navigation>

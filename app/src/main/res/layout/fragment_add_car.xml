@@ -159,7 +159,7 @@
                 android:fontFamily="@font/mulish_bold"
                 android:hint="@string/hint_year_invation"
                 android:importantForAutofill="no"
-                android:inputType="number"
+                android:inputType="numberSigned"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="12dp"
                 android:textColor="@color/custom_black"
