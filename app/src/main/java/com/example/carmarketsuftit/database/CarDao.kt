@@ -13,7 +13,10 @@ interface CarDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addCar(car: Car)
 
-    @Query("SELECT * FROM car_table ORDER BY id ASC")
+    @Insert
+    fun addCars(cars: List<Car>)
+
+    @Query("SELECT * FROM car_table")
     fun readAllData(): LiveData<List<Car>>
 
     @Query("SELECT * FROM car_table WHERE name LIKE :searchWord ORDER BY name ASC")

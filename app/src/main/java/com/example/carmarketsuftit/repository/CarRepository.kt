@@ -13,6 +13,10 @@ class CarRepository(private val carDao: CarDao) {
         carDao.addCar(car)
     }
 
+    fun addCars(cars: List<Car>) {
+        carDao.addCars(cars)
+    }
+
     fun getSearchCar(searchWord: String): LiveData<List<Car>> {
         return carDao.getSearchCar(searchWord)
     }

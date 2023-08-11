@@ -44,8 +44,8 @@ class CarsAdapter : RecyclerView.Adapter<CarsAdapter.ViewHolder>() {
             Glide.with(this).load(car.image).centerCrop().into(binding.ivCarImage)
             binding.tvCarName.text = car.name
             binding.tvCarYear.text = car.creationYear.toString()
-            binding.tvPrice.text = car.price.toString()
-            binding.tvEngineCapacity.text = car.price.toString()
+            binding.tvPrice.text = "${car.price}$"
+            binding.tvEngineCapacity.text = car.engine_capacity.toString()
             binding.addedTime.text = car.publicationDate
             setOnClickListener {
                 onItemClickListener?.let { it(car) }

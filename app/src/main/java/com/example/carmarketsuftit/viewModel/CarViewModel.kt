@@ -28,6 +28,12 @@ class CarViewModel(private val repository: CarRepository) : ViewModel() {
         _isDataSaved.postValue(thread.isShutdown)
     }
 
+    fun addCars(cars: List<Car>) {
+        thread.execute {
+            repository.addCars(cars)
+        }
+    }
+
     fun getAllData(): LiveData<List<Car>> {
         return repository.readAllData()
     }
