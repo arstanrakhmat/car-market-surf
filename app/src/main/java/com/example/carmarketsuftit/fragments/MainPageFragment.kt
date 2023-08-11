@@ -1,6 +1,7 @@
 package com.example.carmarketsuftit.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,9 @@ class MainPageFragment : BaseFragment<FragmentMainPageBinding>() {
             carAdapter.differ.submitList(it)
         }
 
+        carViewModel.isDbEmpty()
+        setupObservers()
+
         setUpSearch()
     }
 
@@ -49,6 +53,12 @@ class MainPageFragment : BaseFragment<FragmentMainPageBinding>() {
             }
 
             findNavController().navigate(R.id.action_mainPageFragment_to_carDetailsFragment, bundle)
+        }
+    }
+
+    private fun setupObservers() {
+        carViewModel.isDbEmptyValue.observe(viewLifecycleOwner) {
+            Log.d("isDbEmpty", it.toString())
         }
     }
 

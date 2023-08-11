@@ -16,4 +16,12 @@ class CarRepository(private val carDao: CarDao) {
     fun getSearchCar(searchWord: String): LiveData<List<Car>> {
         return carDao.getSearchCar(searchWord)
     }
+
+//    fun getRowCount(): LiveData<Int> {
+//        return carDao.getRowCount()
+//    }
+
+    suspend fun isEmpty(): Boolean {
+        return carDao.isEmpty()
+    }
 }

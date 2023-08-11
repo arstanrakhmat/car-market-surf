@@ -18,4 +18,10 @@ interface CarDao {
 
     @Query("SELECT * FROM car_table WHERE name LIKE :searchWord ORDER BY name ASC")
     fun getSearchCar(searchWord: String): LiveData<List<Car>>
+
+//    @Query("SELECT COUNT(*) FROM car_table")
+//    fun getRowCount(): LiveData<Int>
+
+    @Query("SELECT (SELECT COUNT(*) FROM car_table) == 0")
+    suspend fun isEmpty(): Boolean
 }
