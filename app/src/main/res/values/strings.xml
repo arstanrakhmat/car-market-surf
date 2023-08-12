@@ -18,6 +18,10 @@
     <string name="not_now">Не сейчас</string>
     <string name="add_your_car">Добавить машину</string>
     <string name="buy_subscription">Купить подписку</string>
+    <string name="reset_subscription">Обнулить подписку</string>
+    <string name="reset_title">Вы уверены, что хотите отменить подписку</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
     <string name="add_photo">Добавить фото</string>
     <string name="engine_capacity">Объем двигателя:</string>
     <string name="hint_car_type">Марка вашей машины</string>
@@ -27,6 +31,6 @@
     <string name="bottomSheetTitle">Купите подписку,\n чтобы пользоваться приложением без ограничений\n\nВсего за 5$ в месяц</string>
     <string name="sub_benefits1">Неограниченое количество просмотров объявлений</string>
     <string name="sub_benefits2">Возможность размещение своих автомобилей в нашем приложении</string>
-    <string name="_0000_0000_0000_0000">0000 0000 0000 0000</string>
+    <string name="_0000_0000_0000_0000">123456</string>
 
 </resources>

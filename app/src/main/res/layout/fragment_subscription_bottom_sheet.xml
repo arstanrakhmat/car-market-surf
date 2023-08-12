@@ -115,7 +115,7 @@
             android:fontFamily="@font/mulish_bold"
             android:hint="@string/_0000_0000_0000_0000"
             android:importantForAutofill="no"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:paddingHorizontal="8dp"
             android:paddingVertical="16dp"
             android:textColor="@color/custom_black"

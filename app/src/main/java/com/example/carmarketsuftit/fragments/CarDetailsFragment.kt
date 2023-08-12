@@ -7,10 +7,29 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.carmarketsuftit.databinding.FragmentCarDetailsBinding
+import com.example.carmarketsuftit.utils.CustomPreferences
+import org.koin.android.ext.android.inject
 
 class CarDetailsFragment : BaseFragment<FragmentCarDetailsBinding>() {
 
     private val args: CarDetailsFragmentArgs by navArgs()
+    private val sharedPrefs by inject<CustomPreferences>(
+
+    )
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+//        Log.d(
+//            "prefs",
+//            "counterDefault:${sharedPrefs.fetchVisitValue()} " +
+//                    "increment:${sharedPrefs.saveVisitValue()}" +
+//                    "checKCounter: ${sharedPrefs.fetchVisitValue()}" +
+//                    " subs: ${sharedPrefs.fetchSubscription()}" +
+//                    "bySubs: ${sharedPrefs.saveSubscription("updated")}" +
+//                    "checkNewSubs: ${sharedPrefs.fetchSubscription()}"
+//        )
+        sharedPrefs.saveVisitValue()
+    }
 
     override fun inflateView(
         inflater: LayoutInflater,

@@ -17,8 +17,10 @@ import androidx.core.view.drawToBitmap
 import androidx.navigation.fragment.findNavController
 import com.example.carmarketsuftit.databinding.FragmentAddCarBinding
 import com.example.carmarketsuftit.model.Car
+import com.example.carmarketsuftit.utils.CustomPreferences
 import com.example.carmarketsuftit.utils.toHumanReadableFormat
 import com.example.carmarketsuftit.viewModel.CarViewModel
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.Date
 
@@ -28,6 +30,7 @@ class AddCarFragment : BaseFragment<FragmentAddCarBinding>() {
     }
 
     private val carViewModel by viewModel<CarViewModel>()
+    private val sharedPrefs by inject<CustomPreferences>()
 
     override fun inflateView(
         inflater: LayoutInflater,
@@ -100,6 +103,7 @@ class AddCarFragment : BaseFragment<FragmentAddCarBinding>() {
             it?.let {
                 if (it) {
                     Toast.makeText(requireContext(), "Машина добавлена", Toast.LENGTH_SHORT).show()
+                    sharedPrefs.saveAddedCarCounter()
                     findNavController().navigateUp()
                 }
             }
