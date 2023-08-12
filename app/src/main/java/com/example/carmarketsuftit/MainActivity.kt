@@ -2,6 +2,7 @@ package com.example.carmarketsuftit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -23,5 +24,22 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainer) as NavHostFragment
         navController = navHostFragment.navController
         bottomNavView.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.carDetailsFragment -> hideBottomNavigation()
+                R.id.addCarFragment -> hideBottomNavigation()
+                else -> showNavigation()
+            }
+        }
     }
+
+    private fun hideBottomNavigation() {
+        binding.bottomNavigationView.visibility = View.GONE
+    }
+
+    private fun showNavigation() {
+        binding.bottomNavigationView.visibility = View.VISIBLE
+    }
+
 }

@@ -88,7 +88,7 @@ class AddCarFragment : BaseFragment<FragmentAddCarBinding>() {
                 price.toString().toDouble(),
                 publicationDate
             )
-            Toast.makeText(requireContext(), "Filled", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(requireContext(), "Filled", Toast.LENGTH_SHORT).show()
             Log.d("data", car.toString())
 
             carViewModel.addCar(car)
